@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      精彩
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <br>
+  <ion-list no-border>
+    <ion-item (click)="toNewsPage()">
+      <ion-label>
+        新闻
+      </ion-label>
+      <ion-icon ios="ios-paper" md="md-paper"  item-left></ion-icon>
+    </ion-item>
+
+    <ion-item (click)="toNBAPage()">
+      <ion-icon ios="ios-basketball" md="md-basketball" item-left></ion-icon>
+      NBA赛讯
+    </ion-item>
+
+    <ion-item (click)="toSoccerPage()">
+      <ion-icon ios="ios-football" md="md-football" item-left></ion-icon>
+      <ion-label>
+        足球联赛赛讯
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+
+    <ion-item (click)="toFilePage()">
+      <ion-label>
+        看电影
+      </ion-label>
+      <ion-icon ios="ios-film" md="md-film" item-left></ion-icon>
+    </ion-item>
+
+    <ion-item (click)="toConstellationPage()">
+      <ion-icon ios="ios-aperture" md="md-aperture" item-left></ion-icon>
+      星座运势
+    </ion-item>
+
+    <ion-item (click)="toWeatherPage()">
+      <ion-icon ios="ios-partly-sunny" md="md-partly-sunny" item-left></ion-icon>
+      天气预报
+    </ion-item>
+
+    <ion-item (click)="toRobotPage()">
+      <ion-icon ios="ios-ionitron" md="md-ionitron" item-left></ion-icon>
+      智能机器人
+      <ion-note item-right>会说话的机器人</ion-note>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+
+    <ion-item (click)="toMapPage()">
+      <ion-icon ios="ios-navigate" md="md-navigate" item-left></ion-icon>
+      地图
+    </ion-item>
+
+    <ion-item (click)="toBusPage()">
+      <ion-icon ios="ios-bus" md="md-bus" item-left></ion-icon>
+      公交线路查询
+    </ion-item>
+
+  </ion-list>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>聊天</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="刷新中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of conversations"  #slidingItem>
+    <ion-item (click)="toChatView(item)">
+      <ion-avatar item-left>
+        <img src="assets/img/avatar-ts-woody.png">
+      </ion-avatar>
+      <h2>{{item.nickname}}</h2>
+      <p>{{item.showMsg}}</p>
+      <ion-note item-right>{{item.showTime}}</ion-note>
+      <ion-badge  item-right color="danger" *ngIf="item.needRead>0">{{item.needRead}}</ion-badge>
+    </ion-item>
+    <ion-item-options side="right" >
+      <button ion-button color="light" cancelable="ture" (click)="flagIsReadConversationItem(slidingItem,item)">
+        标为已读
+      </button>
+      <button ion-button color="danger" (click)="removeConversationItem(item)">
+        删除对话
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-list>
+</ion-content>

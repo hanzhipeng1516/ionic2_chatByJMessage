@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      我的信息
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>账户</ion-label>
+      <ion-input type="text" [(ngModel)]="userInfo.username" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>昵称</ion-label>
+      <ion-input type="text" [(ngModel)]="userInfo.nickname" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>年龄</ion-label>
+      <ion-input type="text" [(ngModel)]="userInfo.age"></ion-input>
+    </ion-item>
+    <ion-item (click)="chooseSex()">
+      <p >
+        性别 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <span *ngIf="userInfo.sex==1" >男</span>
+        <span *ngIf="userInfo.sex==2" >女</span>
+        <span *ngIf="userInfo.sex==0||userInfo.sex==null" >请选择</span>
+      </p>
+      <ion-icon item-right ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <button ion-button full color="primary" (click)="subForm()">更新</button>
+</ion-content>

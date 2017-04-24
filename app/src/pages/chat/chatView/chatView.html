@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{toUserNickName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let msgItem of msgList">
+        <ion-col width-20 *ngIf="msgItem.viewLocation==0">
+          <ion-item>
+            <ion-avatar item-left>
+              <img src="assets/img/avatar-frodo.jpg">
+            </ion-avatar>
+          </ion-item>
+        </ion-col>
+        <ion-col width-80 *ngIf="msgItem.viewLocation==0">
+          <ion-card>
+            <ion-card-content>
+              {{msgItem.content}}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col width-80 *ngIf="msgItem.viewLocation==1">
+          <ion-card>
+            <ion-card-content>
+              {{msgItem.content}}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col width-20 *ngIf="msgItem.viewLocation==1">
+          <ion-item>
+            <ion-avatar item-left>
+              <img src="assets/img/avatar-frodo.jpg">
+            </ion-avatar>
+          </ion-item>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="contentText"></ion-input>
+    </ion-item>
+    <ion-buttons end>
+      <button ion-button outline color="secondary" (click)="toSendMsg()">
+        发送
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

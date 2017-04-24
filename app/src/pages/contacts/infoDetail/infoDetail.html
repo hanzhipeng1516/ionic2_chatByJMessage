@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>{{mTitle}}</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only *ngIf="actionType=='detailInfo'" (click)="moreAction(item)">
+          <ion-icon name="more" color="dark"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <img *ngIf="item.imgUrl!=null&&item.imgUrl!=''&&item.imgUrl!=undefined&&item.imgUrl!='null'" src="{{item.imgUrl}}">
+    <img *ngIf="item.imgUrl==null||item.imgUrl==''||item.imgUrl==undefined||item.imgUrl=='null'" src="assets/img/emplyAvatar.jpg">
+    <ion-item>
+      <h2>账户名</h2>
+      <p>{{item.username}}</p>
+    </ion-item>
+    <ion-item>
+      <h2>年龄</h2>
+      <p>{{item.age}}</p>
+    </ion-item>
+    <ion-item>
+      <h2>性别</h2>
+      <p>{{item.sex}}</p>
+    </ion-item>
+    <!--添加好友情况下-->
+    <ion-item *ngIf="actionType=='request'">
+       <button ion-button full color="primary" (click)="addFriendBtn(item.username)" style="font-size: 16px" padding>添加好友</button>
+    </ion-item>
+    <ion-item *ngIf="actionType=='detailInfo'">
+      <button ion-button full color="primary" (click)="startChat(item.username,item.nickname)" style="font-size: 16px" padding>发信息</button>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

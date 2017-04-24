@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>我的消息</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngFor="let item of requestList">
+    <ion-item>
+      <ion-avatar item-left (click)="toUserInfoPage(item)">
+        <img *ngIf="item.imgUrl!=null&&item.imgUrl!=''&&item.imgUrl!=undefined&&item.imgUrl!='null'" src="{{item.imgUrl}}">
+        <img *ngIf="item.imgUrl==null||item.imgUrl==''||item.imgUrl==undefined||item.imgUrl=='null'" src="assets/img/emplyAvatar.jpg">
+      </ion-avatar>
+      <h2>{{item.nickname}}</h2>
+      <p>{{item.fromUser}}</p>
+      <!--<button ion-button clear item-right >同意</button>-->
+      <button ion-button item-right color="secondary" (click)="agreeAdd(item)">
+        同意
+      </button>
+      <button ion-button item-right color="danger" (click)="refuseAdd(item)">
+        拒绝
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

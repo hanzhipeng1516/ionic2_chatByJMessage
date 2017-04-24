@@ -1,0 +1,10 @@
+.box{
+  display: flex;
+}
+.box-left{
+  flex:1;
+}
+.box-right{
+  flex:1;
+  text-align: right;
+}

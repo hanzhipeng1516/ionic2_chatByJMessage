@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{topBatTitle}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form (ngSubmit)="regForm()" >
+    <ion-item>
+      <ion-input ion-text placeholder="邮箱" [(ngModel)]="mForm.username" name="username"></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-input ion-text placeholder="请输入6位验证码" [(ngModel)]="mForm.validCode" name="validCode" ></ion-input>
+      <button ion-button color="secondary" [disabled]="buttonDisabled"  item-right  type="button" (click)="sendEmail()" >{{sendBtn}}</button>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="密码" type="password" [(ngModel)]="mForm.password1" name="password1" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="确认密码" type="password" [(ngModel)]="mForm.password2" name="password2" ></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button type="submit" block>{{subBtnTest}}</button>
+  </form>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+   <ion-toolbar>
+     <ion-title>
+       登录
+     </ion-title>
+   </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <form (ngSubmit)="loginForm()">
+    <ion-item>
+      <ion-input placeholder="邮箱" ion-text [(ngModel)]="todo.username" name="user"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="密码" type="password" [(ngModel)]="todo.password" name="pwd"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button type="submit" block>登录</button>
+  </form>
+  <br>
+  <div class="box">
+    <a class="box-left" (click)="toUserManage(1)">注册新用户</a>
+    <a class="box-right" (click)="toUserManage(2)">找回密码</a>
+  </div>
+
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      我的
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content  class="card-background-page">
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-left (click)="updateAvater()">
+        <img src="{{userInfo.imgUrl}}">
+      </ion-thumbnail>
+      <h2>{{userInfo.nickname}}</h2>
+      <p>{{userInfo.username}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item (click)="toMyInfoPage()">
+      我的信息
+      <ion-icon item-right ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+    </ion-item>
+    <ion-item (click)="toLoginOut()">
+      登出
+      <ion-icon item-right ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
