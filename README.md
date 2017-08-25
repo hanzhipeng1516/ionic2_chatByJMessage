@@ -1,2 +1,2 @@
 # ionic2_chatByJMessage
-用TS写的Ionic2的app项目
+用TS写的Ionic2的app项目 集成JMessage和聚合API 
